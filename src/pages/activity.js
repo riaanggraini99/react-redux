@@ -11,6 +11,7 @@ class Activity extends Component {
         this.props.fetchQuestion();
     }
     render() {
+        console.log('transformed state : ' + this.props.question)
         return (
             <div>
                 <Log />
@@ -19,5 +20,10 @@ class Activity extends Component {
         )
     }
 }
+function mapStateToProps(state) {
+    return {
+        question: state.questions.question
+    }
+}
 
-export default connect(null, { fetchQuestion })(Activity)
+export default connect(mapStateToProps, { fetchQuestion })(Activity)
