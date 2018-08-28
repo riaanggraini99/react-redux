@@ -8,13 +8,14 @@ const INITIAL_STATE = {
 export default function (state = INITIAL_STATE, action) {
     switch (action.type) {
         case FETCH_QUESTION:
-        console.log("ini" + state.question)
+            console.log("ini" , action.payload.data)
             return {
                 ...state,
-                question: action.payload
+                question: action.payload.data
             };
         default:
             return state;
+
 
     }
 }
